@@ -1,0 +1,312 @@
+{
+	"Beta-galactosidase":{
+		"funcao": "betagalactosidase",
+		"ESN35_00940":{
+			"posicao": "238513-240516",
+			"complementar": false,
+			"antes": 4,
+			"depois": 0
+		},
+		"ESN35_01880":{
+			"posicao": "483640-485547",
+			"complementar": false,
+			"antes": 4,
+			"depois": 1
+		},
+		"ESN35_02140":{
+			"posicao": "548549-550918",
+			"complementar": true,
+			"antes": 0,
+			"depois": 1
+		},
+		"ESN35_02545":{
+			"posicao": "672653-674773",
+			"complementar": false,
+			"antes": 1,
+			"depois": 3
+		},
+		"ESN35_08030":{
+			"posicao": "1846490-1848562",
+			"complementar": true,
+			"antes": 2,
+			"depois": 0
+		},
+		"ESN35_10250":{
+			"posicao": "2363882-2365978",
+			"complementar": true,
+			"antes": 3,
+			"depois": 1
+		}
+
+	},
+	"Glycosiltransferase family 2 protein":{
+		"funcao": "EPS",
+		"ESN35_01125":{
+			"posicao": "281171-282208",
+			"complementar": true,
+			"antes": 1,
+			"depois": 0
+		},
+		"ESN35_01465":{
+			"posicao": "370919-372256",
+			"complementar": true,
+			"antes": 2,
+			"depois": 0
+		},
+		"ESN35_01470":{
+			"posicao": "372268-373311",
+			"complementar": true,
+			"antes": 1,
+			"depois": 1
+		},
+		"ESN35_01970":{
+			"posicao": "502775-503980",
+			"complementar": true,
+			"antes": 2,
+			"depois": 4
+		},
+		"ESN35_02005":{
+			"posicao": "509807-510808",
+			"complementar": false,
+			"antes": 4,
+			"depois": 2
+		},
+		"ESN35_04380":{
+			"posicao": "1094639-1097677",
+			"complementar": false,
+			"antes": 1,
+			"depois": 0
+		},
+		"ESN35_09925":{
+			"posicao": "2277617-2278633",
+			"complementar": true,
+			"antes": 0,
+			"depois": 2
+		}
+	},
+	"Aminodeoxychorismate/antthranilate synthase component II":{
+		"funcao": "acido folico",
+		"ESN35_06950":{
+			"posicao": "1575101-1575673",
+			"complementar": true,
+			"antes": 2,
+			"depois": 2
+		}
+	},
+	"C69 family dipeptidase":{
+		"funcao": "sais biliares",
+		"ESN35_01085":{
+			"posicao": "273015-274538",
+			"complementar": true,
+			"antes": 1,
+			"depois": 0
+		},
+		"ESN35_09805":{
+			"posicao": "2245007-2246602",
+			"complementar": true,
+			"antes": 1,
+			"depois": 1
+		}
+	},
+	"Alpha/beta hydrolase fold":{
+		"funcao": "fosfolipase",
+		"ESN35_00515":{
+			"posicao": "129659-130417",
+			"complementar": false,
+			"antes": 0,
+			"depois": 0
+		},
+		"ESN35_00890":{
+			"posicao": "224236-224985",
+			"complementar": false,
+			"antes": 1,
+			"depois": 1
+		},
+		"ESN35_04130":{
+			"posicao": "1040486-1041832",
+			"complementar": false,
+			"antes": 0,
+			"depois": 2
+		},
+		"ESN35_04165":{
+			"posicao": "1046882-1047658",
+			"complementar": false,
+			"antes": 2,
+			"depois": 5
+		}
+	},
+	"MFS transporter":{
+		"funcao": "sais biliares",
+		"ESN35_00345":{
+			"posicao": "82638-82985",
+			"complementar": true,
+			"antes": 4,
+			"depois": 1
+		},
+		"ESN35_00350":{
+			"posicao": "82820-87617",
+			"complementar": true,
+			"antes": 3,
+			"depois": 2
+		},
+		"ESN35_00445":{
+			"posicao": "110233-111639",
+			"complementar": true,
+			"antes": 1,
+			"depois": 3
+		},
+		"ESN35_00710":{
+			"posicao": "183084-183368",
+			"complementar": true,
+			"antes": 0,
+			"depois": 0
+		},
+		"ESN35_00855":{
+			"posicao": "214458-216047",
+			"complementar": false,
+			"antes": 2,
+			"depois": 1
+		},
+		"ESN35_00860":{
+			"posicao": "216174-217844",
+			"complementar": false,
+			"antes": 3,
+			"depois": 0
+		},
+		"ESN35_00870":{
+			"posicao": "218375-219733",
+			"complementar": false,
+			"antes": 0,
+			"depois": 1
+		},
+		"ESN35_01005":{
+			"posicao": "254316-255536",
+			"complementar": false,
+			"antes": 0,
+			"depois": 0
+		},
+		"ESN35_01290":{
+			"posicao": "333087-334484",
+			"complementar": true,
+			"antes": 1,
+			"depois": 0
+		},
+		"ESN35_02135":{
+			"posicao": "546461-548291",
+			"complementar": true,
+			"antes": 1,
+			"depois": 0
+		},
+		"ESN35_02540":{
+			"posicao": "671196-672524",
+			"complementar": false,
+			"antes": 0,
+			"depois": 4
+		},
+		"ESN35_02640":{
+			"posicao": "702344-703864",
+			"complementar": true,
+			"antes": 0,
+			"depois": 0
+		},
+		"ESN35_02795":{
+			"posicao": "737284-738600",
+			"complementar": false,
+			"antes": 9,
+			"depois": 1
+		},
+		"ESN35_03640":{
+			"posicao": "911051-912412",
+			"complementar": false,
+			"antes": 4,
+			"depois": 5
+		},
+		"ESN35_03775":{
+			"posicao": "948944-950125",
+			"complementar": true,
+			"antes": 2,
+			"depois": 0
+		},
+		"ESN35_03895":{
+			"posicao": "978070-979257",
+			"complementar": false,
+			"antes": 0,
+			"depois": 6
+		},
+		"ESN35_05290":{
+			"posicao": "1281546-1282724",
+			"complementar": false,
+			"antes": 0,
+			"depois": 0
+		},
+		"ESN35_07410":{
+			"posicao": "1696569-1697999",
+			"complementar": true,
+			"antes": 0,
+			"depois": 0
+		},
+		"ESN35_08275":{
+			"posicao": "1908527-1909879",
+			"complementar": true,
+			"antes": 1,
+			"depois": 0
+		},
+		"ESN35_08670":{
+			"posicao": "1989130-1990305",
+			"complementar": false,
+			"antes": 0,
+			"depois": 2
+		},
+		"ESN35_09665":{
+			"posicao": "2215457-2216800",
+			"complementar": false,
+			"antes": 0,
+			"depois": 2
+		},
+		"ESN35_09785":{
+			"posicao": "2240820-2242163",
+			"complementar": false,
+			"antes": 0,
+			"depois": 0
+		},
+		"ESN35_10175":{
+			"posicao": "2346590-2348032",
+			"complementar": true,
+			"antes": 1,
+			"depois": 0
+		}
+	},
+	"Alpha-mannosidase":{
+		"funcao": "manosidase",
+		"ESN35_03445":{
+			"posicao": "864306-865601",
+			"complementar": true,
+			"antes": 0,
+			"depois": 0
+		},
+		"ESN35_03455":{
+			"posicao": "868138-871260",
+			"complementar": false,
+			"antes": 1,
+			"depois": 6
+		}
+	},
+	"Molecular chaperone DnaK":{
+		"funcao": "estresse calor/adesao",
+		"ESN35_10350":{
+			"posicao": "2388787-2390652",
+			"complementar": true,
+			"antes": 0,
+			"depois": 4
+		}
+	},
+	"Co-chaperone GroES":{
+		"funcao": "estresse calor",
+		"ESN35_09155":{
+			"posicao": "2095638-2095931",
+			"complementar": true,
+			"antes": 2,
+			"depois": 3
+		}
+	}
+}
