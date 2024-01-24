@@ -30,9 +30,16 @@ def obter_clusters(genbank: object, funcao: str, id_gene: str, dados: dict) -> d
             # Colocar o gene probiótico no dicionário
             features = obter_features(genbank, id_gene)
             dic_clusters[id_gene]['antes'][id_gene] = {}
-            dic_clusters[id_gene]['antes'][id_gene]['produto'] = features[0][0]
-            dic_clusters[id_gene]['antes'][id_gene]['id_ncbi'] = features[1][0]
-            dic_clusters[id_gene]['antes'][id_gene]['localizacao'] = features[2]
+            try:
+                f_1 = features[0][0]
+                f_2 = features[1][0]
+                f_3 = features[2]
+            except TypeError:
+                pass
+            else:
+                dic_clusters[id_gene]['antes'][id_gene]['produto'] = f_1
+                dic_clusters[id_gene]['antes'][id_gene]['id_ncbi'] = f_2
+                dic_clusters[id_gene]['antes'][id_gene]['localizacao'] = f_3
 
             # Obter os outros genes anteriores
             for i in range(antes):
@@ -46,9 +53,16 @@ def obter_clusters(genbank: object, funcao: str, id_gene: str, dados: dict) -> d
                     # Adicionar as features dos genes
                     features = obter_features(genbank, id_gene_anterior)
                     dic_clusters[id_gene]['antes'][id_gene_anterior] = {}
-                    dic_clusters[id_gene]['antes'][id_gene_anterior]['produto'] = features[0][0]
-                    dic_clusters[id_gene]['antes'][id_gene_anterior]['id_ncbi'] = features[1][0]
-                    dic_clusters[id_gene]['antes'][id_gene_anterior]['localizacao'] = features[2]
+                    try:
+                        f_1 = features[0][0]
+                        f_2 = features[1][0]
+                        f_3 = features[2]
+                    except TypeError:
+                        pass
+                    else:
+                        dic_clusters[id_gene]['antes'][id_gene_anterior]['produto'] = f_1
+                        dic_clusters[id_gene]['antes'][id_gene_anterior]['id_ncbi'] = f_2
+                        dic_clusters[id_gene]['antes'][id_gene_anterior]['localizacao'] = f_3
 
                 elif 1000 < id_bruto < 9999:
                     id_gene_anterior = f'ESN35_0{id_gene_temp}'
@@ -56,9 +70,16 @@ def obter_clusters(genbank: object, funcao: str, id_gene: str, dados: dict) -> d
                     # Adicionar as features dos genes
                     features = obter_features(genbank, id_gene_anterior)
                     dic_clusters[id_gene]['antes'][id_gene_anterior] = {}
-                    dic_clusters[id_gene]['antes'][id_gene_anterior]['produto'] = features[0][0]
-                    dic_clusters[id_gene]['antes'][id_gene_anterior]['id_ncbi'] = features[1][0]
-                    dic_clusters[id_gene]['antes'][id_gene_anterior]['localizacao'] = features[2]
+                    try:
+                        f_1 = features[0][0]
+                        f_2 = features[1][0]
+                        f_3 = features[2]
+                    except TypeError:
+                        pass
+                    else:
+                        dic_clusters[id_gene]['antes'][id_gene_anterior]['produto'] = f_1
+                        dic_clusters[id_gene]['antes'][id_gene_anterior]['id_ncbi'] = f_2
+                        dic_clusters[id_gene]['antes'][id_gene_anterior]['localizacao'] = f_3
 
                 else:
                     id_gene_anterior = f'ESN35_{id_gene_temp}'
@@ -66,9 +87,16 @@ def obter_clusters(genbank: object, funcao: str, id_gene: str, dados: dict) -> d
                     # Adicionar as features dos genes
                     features = obter_features(genbank, id_gene_anterior)
                     dic_clusters[id_gene]['antes'][id_gene_anterior] = {}
-                    dic_clusters[id_gene]['antes'][id_gene_anterior]['produto'] = features[0][0]
-                    dic_clusters[id_gene]['antes'][id_gene_anterior]['id_ncbi'] = features[1][0]
-                    dic_clusters[id_gene]['antes'][id_gene_anterior]['localizacao'] = features[2]
+                    try:
+                        f_1 = features[0][0]
+                        f_2 = features[1][0]
+                        f_3 = features[2]
+                    except TypeError:
+                        pass
+                    else:
+                        dic_clusters[id_gene]['antes'][id_gene_anterior]['produto'] = f_1
+                        dic_clusters[id_gene]['antes'][id_gene_anterior]['id_ncbi'] = f_2
+                        dic_clusters[id_gene]['antes'][id_gene_anterior]['localizacao'] = f_3
 
         # Obter quantos genes vêm depois
         depois = int(dados[funcao][id_gene]['depois'])
@@ -84,9 +112,16 @@ def obter_clusters(genbank: object, funcao: str, id_gene: str, dados: dict) -> d
             # Colocar o gene probiótico no dicionário
             features = obter_features(genbank, id_gene)
             dic_clusters[id_gene]['depois'][id_gene] = {}
-            dic_clusters[id_gene]['depois'][id_gene]['produto'] = features[0][0]
-            dic_clusters[id_gene]['depois'][id_gene]['id_ncbi'] = features[1][0]
-            dic_clusters[id_gene]['depois'][id_gene]['localizacao'] = features[2]
+            try:
+                f_1 = features[0][0]
+                f_2 = features[1][0]
+                f_3 = features[2]
+            except TypeError:
+                pass
+            else:
+                dic_clusters[id_gene]['depois'][id_gene]['produto'] = f_1
+                dic_clusters[id_gene]['depois'][id_gene]['id_ncbi'] = f_2
+                dic_clusters[id_gene]['depois'][id_gene]['localizacao'] = f_3
 
             # Obter os outros genes anteriores
             for i in range(depois):
@@ -95,34 +130,55 @@ def obter_clusters(genbank: object, funcao: str, id_gene: str, dados: dict) -> d
 
                 # Recriar a string do "locus_tag"
                 if id_bruto < 1000:
-                    id_gene_anterior = f'ESN35_00{id_gene_temp}'
+                    id_gene_posterior = f'ESN35_00{id_gene_temp}'
 
                     # Adicionar as features dos genes
-                    features = obter_features(genbank, id_gene_anterior)
-                    dic_clusters[id_gene]['depois'][id_gene_anterior] = {}
-                    dic_clusters[id_gene]['depois'][id_gene_anterior]['produto'] = features[0][0]
-                    dic_clusters[id_gene]['depois'][id_gene_anterior]['id_ncbi'] = features[1][0]
-                    dic_clusters[id_gene]['depois'][id_gene_anterior]['localizacao'] = features[2]
+                    features = obter_features(genbank, id_gene_posterior)
+                    dic_clusters[id_gene]['depois'][id_gene_posterior] = {}
+                    try:
+                        f_1 = features[0][0]
+                        f_2 = features[1][0]
+                        f_3 = features[2]
+                    except TypeError:
+                        pass
+                    else:
+                        dic_clusters[id_gene]['depois'][id_gene_posterior]['produto'] = f_1
+                        dic_clusters[id_gene]['depois'][id_gene_posterior]['id_ncbi'] = f_2
+                        dic_clusters[id_gene]['depois'][id_gene_posterior]['localizacao'] = f_3
 
                 elif 1000 < id_bruto < 9999:
-                    id_gene_anterior = f'ESN35_0{id_gene_temp}'
+                    id_gene_posterior = f'ESN35_0{id_gene_temp}'
 
                     # Adicionar as features dos genes
-                    features = obter_features(genbank, id_gene_anterior)
-                    dic_clusters[id_gene]['depois'][id_gene_anterior] = {}
-                    dic_clusters[id_gene]['depois'][id_gene_anterior]['produto'] = features[0][0]
-                    dic_clusters[id_gene]['depois'][id_gene_anterior]['id_ncbi'] = features[1][0]
-                    dic_clusters[id_gene]['depois'][id_gene_anterior]['localizacao'] = features[2]
+                    features = obter_features(genbank, id_gene_posterior)
+                    dic_clusters[id_gene]['depois'][id_gene_posterior] = {}
+                    try:
+                        f_1 = features[0][0]
+                        f_2 = features[1][0]
+                        f_3 = features[2]
+                    except TypeError:
+                        pass
+                    else:
+                        dic_clusters[id_gene]['depois'][id_gene_posterior]['produto'] = f_1
+                        dic_clusters[id_gene]['depois'][id_gene_posterior]['id_ncbi'] = f_2
+                        dic_clusters[id_gene]['depois'][id_gene_posterior]['localizacao'] = f_3
 
                 else:
-                    id_gene_anterior = f'ESN35_{id_gene_temp}'
+                    id_gene_posterior = f'ESN35_{id_gene_temp}'
 
                     # Adicionar as features dos genes
-                    features = obter_features(genbank, id_gene_anterior)
-                    dic_clusters[id_gene]['depois'][id_gene_anterior] = {}
-                    dic_clusters[id_gene]['depois'][id_gene_anterior]['produto'] = features[0][0]
-                    dic_clusters[id_gene]['depois'][id_gene_anterior]['id_ncbi'] = features[1][0]
-                    dic_clusters[id_gene]['depois'][id_gene_anterior]['localizacao'] = features[2]
+                    features = obter_features(genbank, id_gene_posterior)
+                    dic_clusters[id_gene]['depois'][id_gene_posterior] = {}
+                    try:
+                        f_1 = features[0][0]
+                        f_2 = features[1][0]
+                        f_3 = features[2]
+                    except TypeError:
+                        pass
+                    else:
+                        dic_clusters[id_gene]['depois'][id_gene_posterior]['produto'] = f_1
+                        dic_clusters[id_gene]['depois'][id_gene_posterior]['id_ncbi'] = f_2
+                        dic_clusters[id_gene]['depois'][id_gene_posterior]['localizacao'] = f_3
 
     # --- Se a complmentar for "True", os genes posteriores NÃO se mantêm na ordem numérica --- #
     if complementar is True:
@@ -140,9 +196,16 @@ def obter_clusters(genbank: object, funcao: str, id_gene: str, dados: dict) -> d
             # Colocar o gene probiótico no dicionário
             features = obter_features(genbank, id_gene)
             dic_clusters[id_gene]['antes'][id_gene] = {}
-            dic_clusters[id_gene]['antes'][id_gene]['produto'] = features[0][0]
-            dic_clusters[id_gene]['antes'][id_gene]['id_ncbi'] = features[1][0]
-            dic_clusters[id_gene]['antes'][id_gene]['localizacao'] = features[2]
+            try:
+                f_1 = features[0][0]
+                f_2 = features[1][0]
+                f_3 = features[2]
+            except TypeError:
+                pass
+            else:
+                dic_clusters[id_gene]['antes'][id_gene]['produto'] = f_1
+                dic_clusters[id_gene]['antes'][id_gene]['id_ncbi'] = f_2
+                dic_clusters[id_gene]['antes'][id_gene]['localizacao'] = f_3
 
             # Obter os outros genes anteriores
             for i in range(antes):
@@ -156,9 +219,16 @@ def obter_clusters(genbank: object, funcao: str, id_gene: str, dados: dict) -> d
                     # Adicionar as features dos genes
                     features = obter_features(genbank, id_gene_anterior)
                     dic_clusters[id_gene]['antes'][id_gene_anterior] = {}
-                    dic_clusters[id_gene]['antes'][id_gene_anterior]['produto'] = features[0][0]
-                    dic_clusters[id_gene]['antes'][id_gene_anterior]['id_ncbi'] = features[1][0]
-                    dic_clusters[id_gene]['antes'][id_gene_anterior]['localizacao'] = features[2]
+                    try:
+                        f_1 = features[0][0]
+                        f_2 = features[1][0]
+                        f_3 = features[2]
+                    except TypeError:
+                        pass
+                    else:
+                        dic_clusters[id_gene]['antes'][id_gene_anterior]['produto'] = f_1
+                        dic_clusters[id_gene]['antes'][id_gene_anterior]['id_ncbi'] = f_2
+                        dic_clusters[id_gene]['antes'][id_gene_anterior]['localizacao'] = f_3
 
                 elif 1000 < id_bruto < 9999:
                     id_gene_anterior = f'ESN35_0{id_gene_temp}'
@@ -166,9 +236,16 @@ def obter_clusters(genbank: object, funcao: str, id_gene: str, dados: dict) -> d
                     # Adicionar as features dos genes
                     features = obter_features(genbank, id_gene_anterior)
                     dic_clusters[id_gene]['antes'][id_gene_anterior] = {}
-                    dic_clusters[id_gene]['antes'][id_gene_anterior]['produto'] = features[0][0]
-                    dic_clusters[id_gene]['antes'][id_gene_anterior]['id_ncbi'] = features[1][0]
-                    dic_clusters[id_gene]['antes'][id_gene_anterior]['localizacao'] = features[2]
+                    try:
+                        f_1 = features[0][0]
+                        f_2 = features[1][0]
+                        f_3 = features[2]
+                    except TypeError:
+                        pass
+                    else:
+                        dic_clusters[id_gene]['antes'][id_gene_anterior]['produto'] = f_1
+                        dic_clusters[id_gene]['antes'][id_gene_anterior]['id_ncbi'] = f_2
+                        dic_clusters[id_gene]['antes'][id_gene_anterior]['localizacao'] = f_3
 
                 else:
                     id_gene_anterior = f'ESN35_{id_gene_temp}'
@@ -176,9 +253,16 @@ def obter_clusters(genbank: object, funcao: str, id_gene: str, dados: dict) -> d
                     # Adicionar as features dos genes
                     features = obter_features(genbank, id_gene_anterior)
                     dic_clusters[id_gene]['antes'][id_gene_anterior] = {}
-                    dic_clusters[id_gene]['antes'][id_gene_anterior]['produto'] = features[0][0]
-                    dic_clusters[id_gene]['antes'][id_gene_anterior]['id_ncbi'] = features[1][0]
-                    dic_clusters[id_gene]['antes'][id_gene_anterior]['localizacao'] = features[2]
+                    try:
+                        f_1 = features[0][0]
+                        f_2 = features[1][0]
+                        f_3 = features[2]
+                    except TypeError:
+                        pass
+                    else:
+                        dic_clusters[id_gene]['antes'][id_gene_anterior]['produto'] = f_1
+                        dic_clusters[id_gene]['antes'][id_gene_anterior]['id_ncbi'] = f_2
+                        dic_clusters[id_gene]['antes'][id_gene_anterior]['localizacao'] = f_3
 
         # Obter quantos genes vêm depois
         depois = int(dados[funcao][id_gene]['depois'])
@@ -194,9 +278,16 @@ def obter_clusters(genbank: object, funcao: str, id_gene: str, dados: dict) -> d
             # Colocar o gene probiótico no dicionário
             features = obter_features(genbank, id_gene)
             dic_clusters[id_gene]['depois'][id_gene] = {}
-            dic_clusters[id_gene]['depois'][id_gene]['produto'] = features[0][0]
-            dic_clusters[id_gene]['depois'][id_gene]['id_ncbi'] = features[1][0]
-            dic_clusters[id_gene]['depois'][id_gene]['localizacao'] = features[2]
+            try:
+                f_1 = features[0][0]
+                f_2 = features[1][0]
+                f_3 = features[2]
+            except TypeError:
+                pass
+            else:
+                dic_clusters[id_gene]['depois'][id_gene]['produto'] = f_1
+                dic_clusters[id_gene]['depois'][id_gene]['id_ncbi'] = f_2
+                dic_clusters[id_gene]['depois'][id_gene]['localizacao'] = f_3
 
             # Obter os outros genes anteriores
             for i in range(depois):
@@ -205,33 +296,54 @@ def obter_clusters(genbank: object, funcao: str, id_gene: str, dados: dict) -> d
 
                 # Recriar a string do "locus_tag"
                 if id_bruto < 1000:
-                    id_gene_anterior = f'ESN35_00{id_gene_temp}'
+                    id_gene_posterior = f'ESN35_00{id_gene_temp}'
 
                     # Adicionar as features dos genes
-                    features = obter_features(genbank, id_gene_anterior)
-                    dic_clusters[id_gene]['depois'][id_gene_anterior] = {}
-                    dic_clusters[id_gene]['depois'][id_gene_anterior]['produto'] = features[0][0]
-                    dic_clusters[id_gene]['depois'][id_gene_anterior]['id_ncbi'] = features[1][0]
-                    dic_clusters[id_gene]['depois'][id_gene_anterior]['localizacao'] = features[2]
+                    features = obter_features(genbank, id_gene_posterior)
+                    dic_clusters[id_gene]['depois'][id_gene_posterior] = {}
+                    try:
+                        f_1 = features[0][0]
+                        f_2 = features[1][0]
+                        f_3 = features[2]
+                    except TypeError:
+                        pass
+                    else:
+                        dic_clusters[id_gene]['depois'][id_gene_posterior]['produto'] = f_1
+                        dic_clusters[id_gene]['depois'][id_gene_posterior]['id_ncbi'] = f_2
+                        dic_clusters[id_gene]['depois'][id_gene_posterior]['localizacao'] = f_3
 
                 elif 1000 < id_bruto < 9999:
-                    id_gene_anterior = f'ESN35_0{id_gene_temp}'
+                    id_gene_posterior = f'ESN35_0{id_gene_temp}'
 
                     # Adicionar as features dos genes
-                    features = obter_features(genbank, id_gene_anterior)
-                    dic_clusters[id_gene]['depois'][id_gene_anterior] = {}
-                    dic_clusters[id_gene]['depois'][id_gene_anterior]['produto'] = features[0][0]
-                    dic_clusters[id_gene]['depois'][id_gene_anterior]['id_ncbi'] = features[1][0]
-                    dic_clusters[id_gene]['depois'][id_gene_anterior]['localizacao'] = features[2]
+                    features = obter_features(genbank, id_gene_posterior)
+                    dic_clusters[id_gene]['depois'][id_gene_posterior] = {}
+                    try:
+                        f_1 = features[0][0]
+                        f_2 = features[1][0]
+                        f_3 = features[2]
+                    except TypeError:
+                        pass
+                    else:
+                        dic_clusters[id_gene]['depois'][id_gene_posterior]['produto'] = f_1
+                        dic_clusters[id_gene]['depois'][id_gene_posterior]['id_ncbi'] = f_2
+                        dic_clusters[id_gene]['depois'][id_gene_posterior]['localizacao'] = f_3
 
                 else:
-                    id_gene_anterior = f'ESN35_{id_gene_temp}'
+                    id_gene_posterior = f'ESN35_{id_gene_temp}'
 
                     # Adicionar as features dos genes
-                    features = obter_features(genbank, id_gene_anterior)
-                    dic_clusters[id_gene]['depois'][id_gene_anterior] = {}
-                    dic_clusters[id_gene]['depois'][id_gene_anterior]['produto'] = features[0][0]
-                    dic_clusters[id_gene]['depois'][id_gene_anterior]['id_ncbi'] = features[1][0]
-                    dic_clusters[id_gene]['depois'][id_gene_anterior]['localizacao'] = features[2]
+                    features = obter_features(genbank, id_gene_posterior)
+                    dic_clusters[id_gene]['depois'][id_gene_posterior] = {}
+                    try:
+                        f_1 = features[0][0]
+                        f_2 = features[1][0]
+                        f_3 = features[2]
+                    except TypeError:
+                        pass
+                    else:
+                        dic_clusters[id_gene]['depois'][id_gene_posterior]['produto'] = f_1
+                        dic_clusters[id_gene]['depois'][id_gene_posterior]['id_ncbi'] = f_2
+                        dic_clusters[id_gene]['depois'][id_gene_posterior]['localizacao'] = f_3
 
     return dic_clusters
