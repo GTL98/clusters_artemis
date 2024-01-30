@@ -63,10 +63,11 @@ if proteina is not None:
             for id_gene in id_genes:
                 try:
                     id_ncbi = dados_clusters[indice]['antes'][id_gene]['id_ncbi']
+                    produto = dados_clusters[indice]['antes'][id_gene]['produto']
                 except KeyError:
                     pass
                 else:
-                    dic_id_ncbi[id_gene] = id_ncbi
+                    dic_id_ncbi[id_gene] = [id_ncbi, produto]
 
             # Obter a localização dos genes
             for id_gene in id_genes:
@@ -90,10 +91,11 @@ if proteina is not None:
             for id_gene in id_genes:
                 try:
                     id_ncbi = dados_clusters[indice]['depois'][id_gene]['id_ncbi']
+                    produto = dados_clusters[indice]['depois'][id_gene]['produto']
                 except KeyError:
                     pass
                 else:
-                    dic_id_ncbi[id_gene] = id_ncbi
+                    dic_id_ncbi[id_gene] = [id_ncbi, produto]
 
             # Obter a localização dos genes
             for id_gene in id_genes:
@@ -128,7 +130,7 @@ if proteina is not None:
 
 # --- Escrever as informações importantes --- #
 try:
-    complementar = complementar_temp
+    x = complementar_temp
 except NameError:
     pass
 else:
@@ -139,5 +141,7 @@ else:
         loc_alternativa_1 = dados[proteina][indice]['posicao'].split('-')[0]
         loc_alternativa_2 = dados[proteina][indice]['posicao'].split('-')[1]
         st.subheader(f'Localização: {loc_alternativa_1} - {loc_alternativa_2}', divider='grey')
-    for id_gene, id_ncbi in dic_id_ncbi.items():
-        st.subheader(f'{id_gene}: {id_ncbi}')
+    for id_gene, valor in dic_id_ncbi.items():
+        id_ncbi = valor[0]
+        produto = valor[1]
+        st.subheader(f'{id_gene}: {id_ncbi} ({produto})')
